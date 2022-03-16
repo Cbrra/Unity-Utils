@@ -1,9 +1,9 @@
 # **Save System**
 
-*`English`*
+:flag_us: *English*
 <br>Basic backup system working with Unity. Data is stored in JSON format but does not need to be in a file with `.json` extension.
 
-*`Français`*
+:flag_fr: *Français*
 <br>Système de sauvegarde basique fonctionnant avec Unity. Les données sont stockées en format JSON mais il n'est pas nécessaire qu'elles soient dans un fichier avec une extension `.json`.
 
 ## **Example**
