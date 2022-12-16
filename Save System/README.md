@@ -12,10 +12,15 @@
 // UserData.cs
 // Create your class extended of JsonFile
 
-public class UserData : JsonFile
+public class UserData : JsonFile<UserData>
 {
     public string username;
     public int id;
+    
+    public void Save()
+    {
+        Save("user.json")
+    }
 }
 ```
 
@@ -29,10 +34,10 @@ public class GameManager : MonoBehaviour
 {
     public UserData userData;
 
-    void Awake()
+    private void Awake()
     {
         // Load the player data
-        userData = UserData.Load<UserData>("filename.json");
+        userData = UserData.Load("user.json");
 
         // Log the player username
         Debug.Log(userData.username);
@@ -41,7 +46,7 @@ public class GameManager : MonoBehaviour
         userData.username = "New Username";
 
         // Save the player data
-        userData.Save("filename.json");
+        userData.Save();
     }
 }
 ```
