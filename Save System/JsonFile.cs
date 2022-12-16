@@ -1,19 +1,19 @@
 using System.IO;
 using UnityEngine;
 
-public abstract class JsonFile
+public abstract class JsonFile<T> where T : new()
 {
-    private static string getFilePath(string path) => Application.persistentDataPath + "/" + path;
+    private static string GetFilePath(string path) => Application.persistentDataPath + "/" + path;
 
     public void Save(string path)
     {
-        File.WriteAllText(getFilePath(path), JsonUtility.ToJson(this));
+        File.WriteAllText(GetFilePath(path), JsonUtility.ToJson(this));
     }
 
-    public static T Load<T>(string path) where T : new()
+    public static T Load(string path)
     {
-        string filePath = getFilePath(path);
-        if(!File.Exists(filePath)) return new T();
+        string filePath = GetFilePath(path);
+        if (!File.Exists(filePath)) return new T();
 
         string data = File.ReadAllText(filePath);
         try
