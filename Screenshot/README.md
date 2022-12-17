@@ -1,10 +1,9 @@
-Take a screenshot (with the canvas)
+Take (and save) a screenshot from the player's view
 ```cs
-// Take and save screenshot
 StartCoroutine(Screenshot.Take());
 ```
 
-Take from a specific camera (without canvas)
+Take a screenshot from a specific camera's view (and without any canvas)
 ```cs
 Screenshot.TakeAndSaveScreenshotFromCamera(yourCamera)
 ```
