@@ -43,7 +43,6 @@ public static class Screenshot
     public static IEnumerator Take()
     {
         yield return new WaitForEndOfFrame();
-        if (!Directory.Exists(path)) Directory.CreateDirectory(path);
 
         Texture2D texture = ScreenCapture.CaptureScreenshotAsTexture();
         texture.ReadPixels(new Rect(0, 0, texture.width, texture.height), 0, 0);
